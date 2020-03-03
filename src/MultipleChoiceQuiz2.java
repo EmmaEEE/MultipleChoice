@@ -1,26 +1,29 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+ *Emma Elliott
+March 3, 2020
+Unit Summative, Multiple Choice Project
 
 /**
  *
  * @author gregelliott
  */
 public class MultipleChoiceQuiz2 extends javax.swing.JFrame {
-   int ScoreValue=0;
-    int CorrectValue=0;
-    int IncorrectValue=0;
-    int QuestionsAnsweredValue=0;
-    double PercentValue=0;
     
+    //Declaring Variables
+    int scoreValue=0;
+    int correctValue=0;
+    int incorrectValue=0;
+    int questionsAnsweredValue=0;
+    double percentValue;
+    
+    //Declaring variables of the TextFields
     String textQ1;
     String textQ2;
     String textQ3;
     String textQ4;
     String textQ5;
     
+    //Declaring Variables as Correct Answers
     final String Q1B= "B";
     final String Q1b= "b";
     final String Q2B= "B";
@@ -31,9 +34,7 @@ public class MultipleChoiceQuiz2 extends javax.swing.JFrame {
     final String Q4c= "c";
     final String Q5D= "D";
     final String Q5d= "d";
-    /**
-     * Creates new form MultipleChoiceQuiz2
-     */
+    
     public MultipleChoiceQuiz2() {
         initComponents();
     }
@@ -449,142 +450,94 @@ public class MultipleChoiceQuiz2 extends javax.swing.JFrame {
     }//GEN-LAST:event_txtQ3ActionPerformed
 
     private void btnCheckAnswersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckAnswersActionPerformed
-
-        if(textQ1.equals("B") || textQ1.equals("b"))
-        {
-            ScoreValue=ScoreValue+1;
-            lblScoreValue.setText(String.valueOf(ScoreValue));
+    //Getting Text from text Fields
+        textQ1 = txtQ1.getText();
+        textQ2 = txtQ2.getText();
+        textQ3 = txtQ3.getText();
+        textQ4 = txtQ4.getText();
+        textQ5 = txtQ5.getText();
+      // Question 1
+        if(textQ1.equals(Q1B) || textQ1.equals(Q1b)){
+            scoreValue=scoreValue+1; // this is good!
             lblQ1Result.setText("Correct");
-            CorrectValue=CorrectValue+1;
-            lblCorrectValue.setText(String.valueOf(CorrectValue));
-            QuestionsAnsweredValue= QuestionsAnsweredValue+1;
-            lblQuestionsAnsweredValue.setText(String.valueOf(QuestionsAnsweredValue));
-            PercentValue= ((double)CorrectValue/(double)QuestionsAnsweredValue);
-            PercentValue=PercentValue*100;
-            PercentValue=Math.round(PercentValue);
-            PercentValue=PercentValue/100;
-            lblPercentValue.setText(String.valueOf(PercentValue));
+            correctValue=correctValue+1;
+            questionsAnsweredValue=questionsAnsweredValue+1;
         }
         else {
+           
             lblQ1Result.setText("Incorrect");
-            IncorrectValue=IncorrectValue+1;
-            lblIncorrectValue.setText(String.valueOf(IncorrectValue));
-            QuestionsAnsweredValue= QuestionsAnsweredValue+1;
-            lblQuestionsAnsweredValue.setText(String.valueOf(QuestionsAnsweredValue));
-            PercentValue= ((double)CorrectValue/(double)QuestionsAnsweredValue);
-            PercentValue=PercentValue*100;
-            PercentValue=Math.round(PercentValue);
-            PercentValue=PercentValue/100;
-            lblPercentValue.setText(String.valueOf(PercentValue));
+            incorrectValue=incorrectValue+1;
+            questionsAnsweredValue=questionsAnsweredValue+1;
+         
+        //Question 2
         }
-         if(textQ2.equals(Q2B) || textQ2.equals(Q2b))
-        {
-        ScoreValue=ScoreValue+1;
-        lblScoreValue.setText(String.valueOf(ScoreValue));
-        lblQ2Result.setText("Correct");
-        CorrectValue=CorrectValue+1;
-        lblCorrectValue.setText(String.valueOf(CorrectValue));
-        QuestionsAnsweredValue= QuestionsAnsweredValue+1;
-        lblQuestionsAnsweredValue.setText(String.valueOf(QuestionsAnsweredValue));
-        PercentValue= ((double)CorrectValue/(double)QuestionsAnsweredValue);
-        PercentValue=PercentValue*100;
-        PercentValue=Math.round(PercentValue);
-        PercentValue=PercentValue/100;
-        lblPercentValue.setText(String.valueOf(PercentValue));
+         if(textQ2.equals(Q2B) || textQ2.equals(Q2b)){
+             
+            scoreValue=scoreValue+1;
+            lblQ2Result.setText("Correct");
+            correctValue=correctValue+1;
+            questionsAnsweredValue=questionsAnsweredValue+1;
+          
         }
         else {
         lblQ2Result.setText("Incorrect");
-        IncorrectValue=IncorrectValue+1;
-        lblIncorrectValue.setText(String.valueOf(IncorrectValue));
-        QuestionsAnsweredValue= QuestionsAnsweredValue+1;
-        lblQuestionsAnsweredValue.setText(String.valueOf(QuestionsAnsweredValue));
-        PercentValue= ((double)CorrectValue/(double)QuestionsAnsweredValue);
-        PercentValue=PercentValue*100;
-        PercentValue=Math.round(PercentValue);
-        PercentValue=PercentValue/100;
-        lblPercentValue.setText(String.valueOf(PercentValue));
+        incorrectValue=incorrectValue+1;
+        questionsAnsweredValue=questionsAnsweredValue+1;
+       
+        //Question 3
     }
- if(textQ3.equals(Q3A) || textQ3.equals(Q3a))
-        {
-        ScoreValue=ScoreValue+1;
-        lblScoreValue.setText(String.valueOf(ScoreValue));
+        if(textQ3.equals(Q3A) || textQ3.equals(Q3a)){
+        scoreValue=scoreValue+1;
         lblQ3Result.setText("Correct");
-        CorrectValue=CorrectValue+1;
-        lblCorrectValue.setText(String.valueOf(CorrectValue));
-        QuestionsAnsweredValue= QuestionsAnsweredValue+1;
-        lblQuestionsAnsweredValue.setText(String.valueOf(QuestionsAnsweredValue));
-        PercentValue= ((double)CorrectValue/(double)QuestionsAnsweredValue);
-        PercentValue=PercentValue*100;
-        PercentValue=Math.round(PercentValue);
-        PercentValue=PercentValue/100;
-        lblPercentValue.setText(String.valueOf(PercentValue));
+        correctValue=correctValue+1;
+        questionsAnsweredValue=questionsAnsweredValue+1;
+        
         }
         else {
         lblQ3Result.setText("Incorrect");
-        IncorrectValue=IncorrectValue+1;
-        lblIncorrectValue.setText(String.valueOf(IncorrectValue));
-        QuestionsAnsweredValue= QuestionsAnsweredValue+1;
-        lblQuestionsAnsweredValue.setText(String.valueOf(QuestionsAnsweredValue));
-        PercentValue= ((double)CorrectValue/(double)QuestionsAnsweredValue);
-        PercentValue=PercentValue*100;
-        PercentValue=Math.round(PercentValue);
-        PercentValue=PercentValue/100;
-        lblPercentValue.setText(String.valueOf(PercentValue));
- }       
-  if(textQ4.equals(Q4C) || textQ4.equals(Q4c))
-        {
-        ScoreValue=ScoreValue+1;
-        lblScoreValue.setText(String.valueOf(ScoreValue));
+        incorrectValue=incorrectValue+1;
+        questionsAnsweredValue=questionsAnsweredValue+1;
+        
+        //Question 4
+ }      
+        if(textQ4.equals(Q4C) || textQ4.equals(Q4c)){
+        scoreValue=scoreValue+1;
         lblQ4Result.setText("Correct");
-        CorrectValue=CorrectValue+1;
-        lblCorrectValue.setText(String.valueOf(CorrectValue));
-        QuestionsAnsweredValue= QuestionsAnsweredValue+1;
-        lblQuestionsAnsweredValue.setText(String.valueOf(QuestionsAnsweredValue));
-        PercentValue= ((double)CorrectValue/(double)QuestionsAnsweredValue);
-        PercentValue=PercentValue*100;
-        PercentValue=Math.round(PercentValue);
-        PercentValue=PercentValue/100;
-        lblPercentValue.setText(String.valueOf(PercentValue));
+        correctValue=correctValue+1;
+        questionsAnsweredValue=questionsAnsweredValue+1;
+     
         }
         else {
         lblQ4Result.setText("Incorrect");
-        IncorrectValue=IncorrectValue+1;
-        lblIncorrectValue.setText(String.valueOf(IncorrectValue));
-        QuestionsAnsweredValue= QuestionsAnsweredValue+1;
-        lblQuestionsAnsweredValue.setText(String.valueOf(QuestionsAnsweredValue));
-        PercentValue= ((double)CorrectValue/(double)QuestionsAnsweredValue);
-        PercentValue=PercentValue*100;
-        PercentValue=Math.round(PercentValue);
-        PercentValue=PercentValue/100;
-        lblPercentValue.setText(String.valueOf(PercentValue));
+        incorrectValue=incorrectValue+1;
+        questionsAnsweredValue=questionsAnsweredValue+1;
+        
+       //Question 5
   }
-   if(textQ5.equals(Q5D) || textQ1.equals(Q5d))
-        {
-        ScoreValue=ScoreValue+1;
-        lblScoreValue.setText(String.valueOf(ScoreValue));
+        if(textQ5.equals(Q5D) || textQ5.equals(Q5d)){
+        scoreValue=scoreValue+1;
         lblQ5Result.setText("Correct");
-        CorrectValue=CorrectValue+1;
-        lblCorrectValue.setText(String.valueOf(CorrectValue));
-        QuestionsAnsweredValue= QuestionsAnsweredValue+1;
-        lblQuestionsAnsweredValue.setText(String.valueOf(QuestionsAnsweredValue));
-        PercentValue= ((double)CorrectValue/(double)QuestionsAnsweredValue);
-        PercentValue=PercentValue*100;
-        PercentValue=Math.round(PercentValue);
-        PercentValue=PercentValue/100;
-        lblPercentValue.setText(String.valueOf(PercentValue));
+        correctValue=correctValue+1;
+        questionsAnsweredValue=questionsAnsweredValue+1;
+       
         }
         else {
         lblQ5Result.setText("Incorrect");
-        IncorrectValue=IncorrectValue+1;
-        lblIncorrectValue.setText(String.valueOf(IncorrectValue));
-        QuestionsAnsweredValue= QuestionsAnsweredValue+1;
-        lblQuestionsAnsweredValue.setText(String.valueOf(QuestionsAnsweredValue));
-        PercentValue= ((double)CorrectValue/(double)QuestionsAnsweredValue);
-        PercentValue=PercentValue*100;
-        PercentValue=Math.round(PercentValue);
-        PercentValue=PercentValue/100;
-        lblPercentValue.setText(String.valueOf(PercentValue));
+        incorrectValue=incorrectValue+1;
+        questionsAnsweredValue=questionsAnsweredValue+1;
         }
+        // Calculations
+        lblCorrectValue.setText(String.valueOf(correctValue));
+        lblIncorrectValue.setText(String.valueOf(incorrectValue));
+        lblScoreValue.setText(String.valueOf(scoreValue));
+        lblQuestionsAnsweredValue.setText(String.valueOf(questionsAnsweredValue));
+        percentValue= ((double)correctValue/(double)questionsAnsweredValue);
+        percentValue=percentValue*100;
+        percentValue=Math.round(percentValue);
+        percentValue=percentValue/100;
+        lblPercentValue.setText(String.valueOf(percentValue));
+       
+             
     }//GEN-LAST:event_btnCheckAnswersActionPerformed
 
     /**
@@ -615,10 +568,8 @@ public class MultipleChoiceQuiz2 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MultipleChoiceQuiz2().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new MultipleChoiceQuiz2().setVisible(true);
         });
     }
 
